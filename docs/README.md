@@ -11,8 +11,12 @@ use docker-compose to run it in production/development mode :
 Development Mode :
 
 ```bash
+npm i
 docker-compose -f docker-compose.dev.yaml up --build
 ```
+
+📝 i am doing `npm i ` because in dev mode, this directory is bind mount with docker container. so if i dont do this `npm i`
+then maybe i got some error like `package not found`.
 
 Production Mode :
 
