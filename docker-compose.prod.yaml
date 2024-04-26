@@ -13,7 +13,7 @@ services:
       - PORT=3333
     command: npm run start
 
-  nginx:
+  nginx-service:
     depends_on:
       - app
     restart: always
