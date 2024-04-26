@@ -7,8 +7,8 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
 RUN  npm i typescript -g 
+RUN npm install
 
 
 # Copy the rest of the application code

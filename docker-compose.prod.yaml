@@ -1,19 +1,16 @@
-version: '1.0.0'
+version: '3.8'
 
 services:
   app:
     build:
       context: ./server
       dockerfile: Dockerfile
-    ports:
-      - "4000:4000"
+
     volumes:
-      - /home/node/app/node_modules
+      - ./server/node_modules:/home/node/app/node_modules
       - ./server:/home/node/app
     environment:
-      - NODE_ENV=PRODUCTION
-    networks:
-      - app-network
+      - PORT=3333
     command: npm run start
 
   nginx:
@@ -24,9 +21,7 @@ services:
       dockerfile: Dockerfile.dev
       context: ./nginx
     ports:
-      - "3050:80"
-    networks:
-      - app-network
+      - "0.0.0.0:80:80"
 
 networks:
   app-network:

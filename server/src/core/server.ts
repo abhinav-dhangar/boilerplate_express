@@ -5,14 +5,14 @@ import { Express } from "express";
 import { InitializeRoutes } from "./initRoutes";
 
 import { helloworldController } from "@src/controllers/helloworld.controller";
-import * as ServerConfig from "@configs/serverConfig.json";
+import { serverConfig } from "@configs/serverConfig";
 import { InitializeMiddleWare } from "./initMiddleware";
 
 export async function server() {
   let app: Express = express();
 
-  let host = ServerConfig.host;
-  let port = ServerConfig.port;
+  let host = serverConfig.host;
+  let port = serverConfig.port;
 
   let link = "http://" + host + ":" + port.toString();
 
