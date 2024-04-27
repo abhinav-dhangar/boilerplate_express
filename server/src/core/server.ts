@@ -1,11 +1,11 @@
+require("module-alias/register");
 var express = require("express");
 
 import { Express } from "express";
 
 import { InitializeRoutes } from "./initRoutes";
 
-import { helloworldController } from "@src/controllers/helloworld.controller";
-import { serverConfig } from "@configs/serverConfig";
+import { serverConfig } from "../configs/serverConfig";
 import { InitializeMiddleWare } from "./initMiddleware";
 
 export async function server() {
