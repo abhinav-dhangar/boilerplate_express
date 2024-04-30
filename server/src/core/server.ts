@@ -14,16 +14,11 @@ export async function server() {
   let host = serverConfig.host;
   let port = serverConfig.port;
 
-  let link = "http://" + host + ":" + port.toString();
-
+  const httpServer = app.listen(port, host, () => {
+    console.log(`Server  started listening at ${host} on ${port} port ! `);
+  });
   await InitializeMiddleWare.InitializeCommonMiddleware(app);
   await InitializeRoutes.init(app);
-
-  app.listen(port, host, () => {
-    console.log(
-      `Server  started listening at ${host} on ${port} port in environment : ${process.env.NODE_ENV}`
-    );
-  });
 
   return Promise.resolve(app);
 }

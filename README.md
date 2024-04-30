@@ -21,7 +21,7 @@ then maybe i got some error like `package not found`.
 Production Mode :
 
 ```bash
-docker-compose -f docker-compose.prod.yaml up --build
+docker compose -f docker-compose.prod.yaml up --build 
 ```
 
 ### or Native

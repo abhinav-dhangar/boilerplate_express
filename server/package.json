@@ -7,11 +7,14 @@
     "doc": "docs"
   },
   "scripts": {
-    "dev": "nodemon -L index.ts",
+    "docker-dev": "nodemon -L index.ts",
+    "dev": "npx concurrently \"npm run dev-watch \" \"npm run dev-start\"",
     "test": "mocha -r ts-node/register tests/**/*.test.ts",
     "build": "npx tsc",
     "start": "node dist/index.js",
-    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test"
+    "coverage": "nyc -r lcov -e .ts -x \"*.test.ts\" npm run test",
+    "dev-start": "nodemon --watch dist --exec \"node dist/index.js\"",
+    "dev-watch": "tsc --watch"
   },
   "keywords": [
     "boilerplate",

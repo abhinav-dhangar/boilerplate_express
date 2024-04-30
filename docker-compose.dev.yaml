@@ -8,8 +8,10 @@ services:
     ports:
       - "4000:4000"
     volumes:
-      - .:/home/node/app
+      - ./server:/home/node/app
+      
     environment:
       - NODE_ENV=DEVELOPMENT
 
-    command: npm run dev
+    command: >
+      npm run docker-dev
