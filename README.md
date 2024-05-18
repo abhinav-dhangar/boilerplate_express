@@ -4,6 +4,12 @@
 
 ## Super-Quick Setup
 
+#### After fetching code , remove .git config
+
+```bash
+npx rimraf ./.git
+```
+
 ### with Docker
 
 use docker-compose to run it in production/development mode :
@@ -21,7 +27,7 @@ then maybe i got some error like `package not found`.
 Production Mode :
 
 ```bash
-docker compose -f docker-compose.prod.yaml up --build 
+docker compose -f docker-compose.prod.yaml up --build
 ```
 
 ### or Native
