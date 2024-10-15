@@ -2,8 +2,8 @@
 
 <img src="https://www.amritaclasses.com/assets/reviews/developers/developer1.jpg" width="300"/>
 
-## Super-Quick Setup
-
+## Super-Quick Setup !
+###  Go to repo's folder with 'cd' command
 #### After fetching code , remove .git config
 
 ```bash
